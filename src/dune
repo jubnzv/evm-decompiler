@@ -1,0 +1,13 @@
+(executable
+ (public_name evm_decompiler)
+ (libraries core clap sedlex)
+ (preprocess
+  (pps sedlex.ppx ppx_deriving.show ppx_deriving.ord)))
+
+(env
+ (dev
+  (flags
+   ; Make warnings non-fatal
+   (:standard -warn-error -A)))
+ (release
+  (ocamlopt_flags :standard -ccopt -static)))
