@@ -6,11 +6,11 @@ let print_instructions bc =
         Instruction.to_string instr |> Printf.printf "%s\n")
 
 let () =
-  Clap.description "An analyzer";
+  Clap.description "EVM decompiler";
   let files =
     Clap.list_string
       ~description:
-        "Paths to source files to check"
+        "Paths to EVM binaries"
       ~placeholder: "PATHS"
       ()
   in
